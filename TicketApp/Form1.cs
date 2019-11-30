@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Models;
+using ServiceLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,37 @@ namespace TicketApp
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //User user = UserRepository.GetUserById(1);
+
+            //MessageBox.Show($"{user.Name}");
+
+            //List<User> users = UserRepository.GetUsers();
+
+            //foreach (var item in users)
+            //{
+            //    MessageBox.Show($"{item.Name}");
+            //}
+
+
+            User user = new User
+            {
+                Name = "Doğan",
+                Surname = "Öztürk",
+                Phone = "00000000",
+                IsActive = true
+            };
+
+            var data = UserRepository.InsertUser(user);
+
+            MessageBox.Show(data.ToString());
+
+
+
+
         }
     }
 }
