@@ -2,3 +2,4 @@
 
 
 *firma bitti
+*TicketRepository tamamlandý.
