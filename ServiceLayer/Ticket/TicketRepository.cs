@@ -96,5 +96,72 @@ namespace ServiceLayer
             return data;
 
         }
+
+        //Herhangi bir şikayeti şikayet sahibi ve firma adı ile birlikte ticket Id'sine göre getirmek için metot (inner join)
+        public static Complaint GetComplaintById(int id)
+        {
+            string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
+                $"[Firm.FirmName],[User.Name],[User.Surname] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
+                $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id] where [Ticket.Id]={id}";
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            Complaint complaint = new Complaint();
+
+            while (reader.Read())
+            {
+                complaint = new Complaint
+                {
+                    Title = reader.GetString(0),
+                    Description = reader.GetString(1),
+                    Detail = reader.GetString(2),
+                    FirmName = reader.GetString(3),
+                    UserName = reader.GetString(4),
+                    UserSurName = reader.GetString(5)
+                };
+
+            }
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
+
+            return complaint;
+
+        }
+
+
+        //bütün şikayetleri firma adı ve şikayet sahibi ile birlikte listelemek için metod (inner join)
+        public static List<Complaint> GetComplaints()
+        {
+            string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
+                $"[Firm.FirmName],[User.Name],[User.Surname] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
+                $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id]";
+
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            Complaint complaint = new Complaint();
+            List<Complaint> complaints = new List<Complaint>();
+
+            while (reader.Read())
+            {
+                complaint = new Complaint
+                {
+                    Title = reader.GetString(0),
+                    Description = reader.GetString(1),
+                    Detail = reader.GetString(2),
+                    FirmName = reader.GetString(3),
+                    UserName = reader.GetString(4),
+                    UserSurName = reader.GetString(5)
+                };
+
+                complaints.Add(complaint);
+            }
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
+
+
+            return complaints;
+        }
     }
 }

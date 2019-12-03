@@ -3,6 +3,8 @@
 
 *firma bitti
 *TicketRepository içinde
-  *GetTicketById(),
-  *GetTickets() ve
-  *InsertTickets() tamamlandý.
+  *GetTicketById() bitti 
+  *GetTickets() bitti 
+  *InsertTickets() bitti.
+  *GetComplaintsById() bitti.
+  *GetComplaints() bitti.
