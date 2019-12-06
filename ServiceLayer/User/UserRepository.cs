@@ -103,15 +103,35 @@ namespace ServiceLayer
                 cmd.Connection.Close();
                 cmd.Connection.Dispose();
             }
-
-            
-
-            
-
-
-
             return data;
            
+
+        }
+
+        public static int DeleteUserById(int id)
+        {
+            string commandText = $"Delete FROM [dbo].[User] where [Id]={id}";
+            int data = 0;
+            SqlCommand cmd = new SqlCommand();
+
+            try
+            {
+                cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+                data = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+                cmd.Connection.Dispose();
+            }
+
+            return data;
 
         }
     }

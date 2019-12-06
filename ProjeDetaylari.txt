@@ -8,3 +8,7 @@
   *InsertTickets() bitti.
   *GetComplaintsById() bitti.
   *GetComplaints() bitti.
+  *Ticket, Firm, User için delete methotu yapýldý.
+  *Þikayetlerin listeleneceði form yapýldý.
+  *Þikayet listele label e týklanýca tüm þikayetlerin listelenmesi için clik altýnda complaint methodu çaðrýldý.
+

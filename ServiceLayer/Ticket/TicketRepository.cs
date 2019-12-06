@@ -59,6 +59,7 @@ namespace ServiceLayer
                     Title = reader.GetString(3),
                     Description = reader.GetString(4),
                     Detail = reader.GetString(5)
+                    
                 };
 
                 tickets.Add(ticket);
@@ -101,7 +102,7 @@ namespace ServiceLayer
         public static Complaint GetComplaintById(int id)
         {
             string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
-                $"[Firm.FirmName],[User.Name],[User.Surname] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
+                $"[Firm.FirmName],[Firm.Address],[User.Name],[User.Surname] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
                 $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id] where [Ticket.Id]={id}";
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 
@@ -117,7 +118,8 @@ namespace ServiceLayer
                     Detail = reader.GetString(2),
                     FirmName = reader.GetString(3),
                     UserName = reader.GetString(4),
-                    UserSurName = reader.GetString(5)
+                    UserSurName = reader.GetString(5),
+                    Address= reader.GetString(6)
                 };
 
             }
@@ -133,7 +135,7 @@ namespace ServiceLayer
         public static List<Complaint> GetComplaints()
         {
             string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
-                $"[Firm.FirmName],[User.Name],[User.Surname] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
+                $"[Firm.FirmName],[Firm.Address],[User.Name],[User.Surname] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
                 $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id]";
 
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
@@ -152,7 +154,8 @@ namespace ServiceLayer
                     Detail = reader.GetString(2),
                     FirmName = reader.GetString(3),
                     UserName = reader.GetString(4),
-                    UserSurName = reader.GetString(5)
+                    UserSurName = reader.GetString(5),
+                    Address=reader.GetString(6)
                 };
 
                 complaints.Add(complaint);
@@ -163,5 +166,33 @@ namespace ServiceLayer
 
             return complaints;
         }
+
+        public static int DeleteTicketById(int id)
+        {
+            string commandText = $"Delete FROM [dbo].[Ticket] where [Id]={id}";
+            int data = 0;
+            SqlCommand cmd = new SqlCommand();
+
+            try
+            {
+                cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+                data = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+                cmd.Connection.Dispose();
+            }
+
+            return data;
+
+        }
+
     }
 }

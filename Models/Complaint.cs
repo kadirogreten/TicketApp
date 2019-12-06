@@ -15,6 +15,7 @@ namespace Models
             public string Description { get; set; }
             public string Detail { get; set; }
             public string FirmName { get; set; }
+            public string  Address { get; set; }
             public string UserName { get; set; }            
             public string UserSurName { get; set; }
             

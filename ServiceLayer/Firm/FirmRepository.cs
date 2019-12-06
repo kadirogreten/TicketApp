@@ -94,7 +94,32 @@ namespace ServiceLayer
             return data;
         }
 
+        public static int DeleteFirmById(int id)
+        {
+            string commandText = $"Delete FROM [dbo].[Firm] where [Id]={id}";
+            int data = 0;
+            SqlCommand cmd = new SqlCommand();
 
+            try
+            {
+                cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+                data = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+                cmd.Connection.Dispose();
+            }
+
+            return data;
+
+        }
 
     }
 

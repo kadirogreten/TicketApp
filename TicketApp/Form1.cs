@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace TicketApp
 {
     public partial class Form1 : Form
@@ -33,21 +34,33 @@ namespace TicketApp
             //}
 
 
-            User user = new User
+            //User user = new User
+            //{
+            //    Name = "Doğan",
+            //    Surname = "Öztürk",
+            //    Phone = "00000000",
+            //    IsActive = true
+            //};
+
+            //var data = UserRepository.InsertUser(user);
+
+            //MessageBox.Show(data.ToString());
+
+
+
+
+
+
+        }
+
+        private void lblSikayetListele_Click(object sender, EventArgs e)
+        {
+
+            List<Complaint> complaints = TicketRepository.GetComplaints();
+            foreach (var item in complaints)
             {
-                Name = "Doğan",
-                Surname = "Öztürk",
-                Phone = "00000000",
-                IsActive = true
-            };
-
-            var data = UserRepository.InsertUser(user);
-
-            MessageBox.Show(data.ToString());
-
-
-
-
+                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}");
+            }
         }
     }
 }
