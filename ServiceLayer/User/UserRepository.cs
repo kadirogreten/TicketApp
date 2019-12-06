@@ -67,10 +67,6 @@ namespace ServiceLayer
                 };
 
                 users.Add(user);
-
-
-
-
             }
             cmd.Connection.Close();
             cmd.Connection.Dispose();
@@ -103,8 +99,7 @@ namespace ServiceLayer
                 cmd.Connection.Close();
                 cmd.Connection.Dispose();
             }
-            return data;
-           
+            return data;           
 
         }
 

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Complaint\ComplaintRepository.cs" />
     <Compile Include="Firm\FirmRepository.cs" />
     <Compile Include="Helper\ConnectionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

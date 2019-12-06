@@ -66,7 +66,7 @@ namespace ServiceLayer
             return firms;
         }
 
-        //firm ya intert sorgusu eklendi.
+        //firm a insert metodu eklendi.
         public static int InsertFirm(Firm firm)
         {
             string commandText = $"INSERT INTO [dbo].[Firm]([FirmName],[Address])VALUES('{firm.FirmName}','{firm.Address}')";
