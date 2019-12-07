@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer
 {
-    class ComplaintRepository
+    public class ComplaintRepository
     {
         //Herhangi bir şikayeti şikayet sahibi ve firma adı ile birlikte ticket Id'sine göre getirmek için metot (inner join)
         public static Complaint GetComplaintById(int id)
