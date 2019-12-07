@@ -56,6 +56,7 @@ namespace TicketApp
             foreach (var item in complaints)
             {
                 dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}");
+               
             }
         }
 
@@ -93,11 +94,9 @@ namespace TicketApp
 
         private void btnSikayetYaz_Click(object sender, EventArgs e)
         {
-            Form frmSikayet = new Form();
-            frmSikayet.MdiParent = this;
-            frmSikayet.Show();
-
-
+            //şikayetin girileceği 2.formu oluştuduk.
+            frmSikayet yeniForm = new frmSikayet();         
+            yeniForm.Show();
         }
     }
 }
