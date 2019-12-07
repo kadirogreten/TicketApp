@@ -50,9 +50,9 @@ namespace TicketApp
 
         private void lblSikayetListele_Click(object sender, EventArgs e)
         {
+               
+            List<Complaint> complaints = ComplaintRepository.GetComplaints();
 
-            List<Complaint> complaints = TicketRepository.GetComplaints();
-            
             foreach (var item in complaints)
             {
                 dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}");
