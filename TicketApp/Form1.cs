@@ -90,5 +90,14 @@ namespace TicketApp
             //Açılan paneli gizlemek için
             pnlBig.Visible = false;
         }
+
+        private void btnSikayetYaz_Click(object sender, EventArgs e)
+        {
+            Form frmSikayet = new Form();
+            frmSikayet.MdiParent = this;
+            frmSikayet.Show();
+
+
+        }
     }
 }
