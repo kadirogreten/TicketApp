@@ -62,5 +62,11 @@ namespace TicketApp
 
            
         }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //phone texbox ına sadece rakam girilmesi için yaptık.
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }
