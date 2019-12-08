@@ -46,20 +46,20 @@
             this.pnlLCenter = new System.Windows.Forms.TableLayoutPanel();
             this.lblDetail = new System.Windows.Forms.Label();
             this.pnlDeneme2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnGizle = new System.Windows.Forms.Button();
             this.btnCevapla = new System.Windows.Forms.Button();
-            this.pnlTop = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
             this.pnlBottom = new System.Windows.Forms.TableLayoutPanel();
             this.lblFirmName = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.btnGizle = new System.Windows.Forms.Button();
+            this.pnlTop = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListele)).BeginInit();
             this.pnlBig.SuspendLayout();
             this.pnlLCenter.SuspendLayout();
             this.pnlDeneme2.SuspendLayout();
-            this.pnlTop.SuspendLayout();
             this.pnlBottom.SuspendLayout();
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBaslik
@@ -169,6 +169,7 @@
             this.btnSikayetYaz.TabIndex = 3;
             this.btnSikayetYaz.Text = "Şikayet yaz";
             this.btnSikayetYaz.UseVisualStyleBackColor = false;
+            this.btnSikayetYaz.Click += new System.EventHandler(this.btnSikayetYaz_Click);
             // 
             // lblSikayetSahibiSirala
             // 
@@ -180,6 +181,7 @@
             this.lblSikayetSahibiSirala.Size = new System.Drawing.Size(258, 26);
             this.lblSikayetSahibiSirala.TabIndex = 4;
             this.lblSikayetSahibiSirala.Text = "Şikayet Sahibine Göre Sırala";
+            this.lblSikayetSahibiSirala.Click += new System.EventHandler(this.lblSikayetSahibiSirala_Click);
             // 
             // lblFirmaSirala
             // 
@@ -191,6 +193,7 @@
             this.lblFirmaSirala.Size = new System.Drawing.Size(258, 26);
             this.lblFirmaSirala.TabIndex = 5;
             this.lblFirmaSirala.Text = "Firma İsmine Göre Sırala";
+            this.lblFirmaSirala.Click += new System.EventHandler(this.lblFirmaSirala_Click);
             // 
             // lblTicketSirala
             // 
@@ -202,6 +205,7 @@
             this.lblTicketSirala.Size = new System.Drawing.Size(258, 26);
             this.lblTicketSirala.TabIndex = 6;
             this.lblTicketSirala.Text = "Şikayet Konusuna Göre Sırala";
+            this.lblTicketSirala.Click += new System.EventHandler(this.lblTicketSirala_Click);
             // 
             // pnlBig
             // 
@@ -235,8 +239,8 @@
             this.pnlLCenter.Name = "pnlLCenter";
             this.pnlLCenter.RowCount = 1;
             this.pnlLCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.29412F));
-            this.pnlLCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.pnlLCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnlLCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.pnlLCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.pnlLCenter.Size = new System.Drawing.Size(251, 139);
             this.pnlLCenter.TabIndex = 31;
             // 
@@ -268,6 +272,18 @@
             this.pnlDeneme2.Size = new System.Drawing.Size(251, 40);
             this.pnlDeneme2.TabIndex = 3;
             // 
+            // btnGizle
+            // 
+            this.btnGizle.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnGizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGizle.Location = new System.Drawing.Point(3, 3);
+            this.btnGizle.Name = "btnGizle";
+            this.btnGizle.Size = new System.Drawing.Size(57, 34);
+            this.btnGizle.TabIndex = 8;
+            this.btnGizle.Text = "gizle";
+            this.btnGizle.UseVisualStyleBackColor = false;
+            this.btnGizle.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnCevapla
             // 
             this.btnCevapla.BackColor = System.Drawing.Color.Tan;
@@ -278,6 +294,47 @@
             this.btnCevapla.TabIndex = 4;
             this.btnCevapla.Text = "Şikayeti Cevapla";
             this.btnCevapla.UseVisualStyleBackColor = false;
+            // 
+            // pnlBottom
+            // 
+            this.pnlBottom.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.pnlBottom.ColumnCount = 2;
+            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39759F));
+            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.pnlBottom.Controls.Add(this.lblFirmName, 0, 0);
+            this.pnlBottom.Controls.Add(this.lblUser, 0, 0);
+            this.pnlBottom.Location = new System.Drawing.Point(3, 206);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.RowCount = 1;
+            this.pnlBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.29412F));
+            this.pnlBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.pnlBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.pnlBottom.Size = new System.Drawing.Size(254, 65);
+            this.pnlBottom.TabIndex = 29;
+            // 
+            // lblFirmName
+            // 
+            this.lblFirmName.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblFirmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblFirmName.ForeColor = System.Drawing.Color.Sienna;
+            this.lblFirmName.Location = new System.Drawing.Point(100, 2);
+            this.lblFirmName.Name = "lblFirmName";
+            this.lblFirmName.Size = new System.Drawing.Size(143, 61);
+            this.lblFirmName.TabIndex = 3;
+            this.lblFirmName.Text = "Firma Adı ve Şehir";
+            this.lblFirmName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblUser
+            // 
+            this.lblUser.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUser.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblUser.Location = new System.Drawing.Point(5, 2);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(87, 61);
+            this.lblUser.TabIndex = 1;
+            this.lblUser.Text = "KullanıcıAdSoyad";
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlTop
             // 
@@ -320,59 +377,6 @@
             this.lblDescription.Text = "Description";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlBottom
-            // 
-            this.pnlBottom.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.pnlBottom.ColumnCount = 2;
-            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39759F));
-            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
-            this.pnlBottom.Controls.Add(this.lblFirmName, 0, 0);
-            this.pnlBottom.Controls.Add(this.lblUser, 0, 0);
-            this.pnlBottom.Location = new System.Drawing.Point(3, 206);
-            this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.RowCount = 1;
-            this.pnlBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.29412F));
-            this.pnlBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.pnlBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.pnlBottom.Size = new System.Drawing.Size(254, 65);
-            this.pnlBottom.TabIndex = 29;
-            // 
-            // lblFirmName
-            // 
-            this.lblFirmName.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.lblFirmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblFirmName.ForeColor = System.Drawing.Color.Sienna;
-            this.lblFirmName.Location = new System.Drawing.Point(104, 2);
-            this.lblFirmName.Name = "lblFirmName";
-            this.lblFirmName.Size = new System.Drawing.Size(143, 61);
-            this.lblFirmName.TabIndex = 3;
-            this.lblFirmName.Text = "Firma Adı ve Şehir";
-            this.lblFirmName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblUser
-            // 
-            this.lblUser.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUser.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblUser.Location = new System.Drawing.Point(5, 2);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(91, 61);
-            this.lblUser.TabIndex = 1;
-            this.lblUser.Text = "KullanıcıAdSoyad";
-            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnGizle
-            // 
-            this.btnGizle.BackColor = System.Drawing.Color.RosyBrown;
-            this.btnGizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGizle.Location = new System.Drawing.Point(3, 3);
-            this.btnGizle.Name = "btnGizle";
-            this.btnGizle.Size = new System.Drawing.Size(57, 34);
-            this.btnGizle.TabIndex = 8;
-            this.btnGizle.Text = "gizle";
-            this.btnGizle.UseVisualStyleBackColor = false;
-            this.btnGizle.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,15 +393,15 @@
             this.Controls.Add(this.lblBaslik);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Ana Sayfa";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgListele)).EndInit();
             this.pnlBig.ResumeLayout(false);
             this.pnlLCenter.ResumeLayout(false);
             this.pnlLCenter.PerformLayout();
             this.pnlDeneme2.ResumeLayout(false);
-            this.pnlTop.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
+            this.pnlTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

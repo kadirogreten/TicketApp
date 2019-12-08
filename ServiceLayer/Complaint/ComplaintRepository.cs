@@ -87,6 +87,97 @@ namespace ServiceLayer
             return data;
         }
 
+        public static List<User> OrderByUser()
+        {
+           //şikayet sahibine göre sırala sorgusunu yaptık.
+            string commandText = $"SELECT * from User order by Name ";
+
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            User user = new User();
+            List<User> userList = new List<User>();
+
+            while (reader.Read())
+            {
+                user = new User
+                {
+                    Name= reader.GetString(0),
+                    Surname = reader.GetString(1),
+                    Phone = reader.GetString(2),                 
+                   
+                };
+
+                userList.Add(user);
+            }
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
+
+            return userList;
+        }
+        public static List<Firm> OrderByFirm()
+        {
+            //firmaya göre sırala sorgusunu yaptık.
+            string commandText = $"SELECT * from Firm order by FirmName ";
+
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            Firm firms = new Firm();
+            List<Firm> firmList = new List<Firm>();
+
+            while (reader.Read())
+            {
+                firms = new Firm
+                {
+                    FirmName = reader.GetString(0),
+                    Address = reader.GetString(1),
+                   
+                };
+
+                firmList.Add(firms);
+            }
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
+
+            return firmList;
+        }
+
+        public static List<Ticket> OrderByComplaint()
+        {
+            //şikayet konusuna göre sırala sorgusunu yaptık.
+            string commandText = $"SELECT * from Ticket order by Title ";
+
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            Ticket tickets = new Ticket();
+            List<Ticket> ticketList = new List<Ticket>();
+
+            while (reader.Read())
+            {
+                tickets = new Ticket
+                {
+                    Id = reader.GetInt32(0),
+                    UserId = reader.GetInt32(1),
+                    FirmId = reader.GetInt32(2),
+                    Title = reader.GetString(3),
+                    Description = reader.GetString(4),
+                    Detail = reader.GetString(5)
+
+                };
+
+                ticketList.Add(tickets);
+            }
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
+
+            return ticketList;
+        }
+
 
     }
 }

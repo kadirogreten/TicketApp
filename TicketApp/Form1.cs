@@ -55,6 +55,7 @@ namespace TicketApp
             foreach (var item in complaints)
             {
                 dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}");
+               
             }
 
                                              
@@ -90,6 +91,45 @@ namespace TicketApp
         {
             //Açılan paneli gizlemek için
             pnlBig.Visible = false;
+        }
+
+        private void btnSikayetYaz_Click(object sender, EventArgs e)
+        {
+            //şikayetin girileceği 2.formu oluştuduk.
+            frmSikayet yeniForm = new frmSikayet();         
+            yeniForm.Show();
+        }
+
+        private void lblSikayetSahibiSirala_Click(object sender, EventArgs e)
+        {
+            List<User> userList = ComplaintRepository.OrderByUser();
+            foreach (var item in userList)
+            {
+                dtgListele.Rows.Add($"{item.Name}", $"{item.Surname}", $"{item.Phone}");
+
+            }
+        }
+
+        private void lblFirmaSirala_Click(object sender, EventArgs e)
+        {
+            List<Firm> firmList = ComplaintRepository.OrderByFirm();
+            foreach (var item in firmList)
+            {
+                dtgListele.Rows.Add($"{item.FirmName}", $"{item.Address}");
+
+            }
+
+        }
+
+        private void lblTicketSirala_Click(object sender, EventArgs e)
+        {
+            List<Ticket> ticketList = ComplaintRepository.OrderByComplaint();
+            foreach (var item in ticketList)
+            {
+                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}");
+
+            }
+
         }
     }
 }
