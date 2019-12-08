@@ -85,95 +85,108 @@ namespace ServiceLayer
             return data;
         }
 
-        public static List<User> OrderByUser()
+        public static List<Complaint> OrderByComplaint()
         {
-           //şikayet sahibine göre sırala sorgusunu yaptık.
-            string commandText = $"SELECT * from User order by Name ";
+            //username göre sıralama
+            string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
+                $"[Firm.FirmName],[Firm.Address],[User.Name],[User.Surname] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
+                $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id] order by [User.Name]";
 
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
-            User user = new User();
-            List<User> userList = new List<User>();
+            Complaint complaint = new Complaint();
+            List<Complaint> complaints = new List<Complaint>();
 
             while (reader.Read())
             {
-                user = new User
+                complaint = new Complaint
                 {
-                    Name= reader.GetString(0),
-                    Surname = reader.GetString(1),
-                    Phone = reader.GetString(2),                 
-                   
+                    Title = reader.GetString(0),
+                    Description = reader.GetString(1),
+                    Detail = reader.GetString(2),
+                    FirmName = reader.GetString(3),
+                    UserName = reader.GetString(4),
+                    UserSurName = reader.GetString(5),
+                    Address = reader.GetString(6)
                 };
 
-                userList.Add(user);
+                complaints.Add(complaint);
             }
             cmd.Connection.Close();
             cmd.Connection.Dispose();
 
-            return userList;
+            return complaints;
         }
-        public static List<Firm> OrderByFirm()
+        public static List<Complaint> OrderByFirmName()
         {
-            //firmaya göre sırala sorgusunu yaptık.
-            string commandText = $"SELECT * from Firm order by FirmName ";
+            //firmname göre sıralama
+            string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
+                $"[Firm.FirmName],[Firm.Address],[User.Name],[User.Surname] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
+                $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id] order by [Firm.FirmName]";
 
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
-            Firm firms = new Firm();
-            List<Firm> firmList = new List<Firm>();
+            Complaint complaint = new Complaint();
+            List<Complaint> complaints = new List<Complaint>();
 
             while (reader.Read())
             {
-                firms = new Firm
+                complaint = new Complaint
                 {
-                    FirmName = reader.GetString(0),
-                    Address = reader.GetString(1),
-                   
+                    Title = reader.GetString(0),
+                    Description = reader.GetString(1),
+                    Detail = reader.GetString(2),
+                    FirmName = reader.GetString(3),
+                    UserName = reader.GetString(4),
+                    UserSurName = reader.GetString(5),
+                    Address = reader.GetString(6)
                 };
 
-                firmList.Add(firms);
+                complaints.Add(complaint);
             }
             cmd.Connection.Close();
             cmd.Connection.Dispose();
 
-            return firmList;
+            return complaints;
         }
 
-        public static List<Ticket> OrderByComplaint()
+        public static List<Complaint> OrderByTitle()
         {
-            //şikayet konusuna göre sırala sorgusunu yaptık.
-            string commandText = $"SELECT * from Ticket order by Title ";
+            //tittle göre sıralama
+            string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
+                $"[Firm.FirmName],[Firm.Address],[User.Name],[User.Surname] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
+                $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id] order by [Ticket.Title]";
 
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
-            Ticket tickets = new Ticket();
-            List<Ticket> ticketList = new List<Ticket>();
+            Complaint complaint = new Complaint();
+            List<Complaint> complaints = new List<Complaint>();
 
             while (reader.Read())
             {
-                tickets = new Ticket
+                complaint = new Complaint
                 {
-                    Id = reader.GetInt32(0),
-                    UserId = reader.GetInt32(1),
-                    FirmId = reader.GetInt32(2),
-                    Title = reader.GetString(3),
-                    Description = reader.GetString(4),
-                    Detail = reader.GetString(5)
-
+                    Title = reader.GetString(0),
+                    Description = reader.GetString(1),
+                    Detail = reader.GetString(2),
+                    FirmName = reader.GetString(3),
+                    UserName = reader.GetString(4),
+                    UserSurName = reader.GetString(5),
+                    Address = reader.GetString(6)
                 };
 
-                ticketList.Add(tickets);
+                complaints.Add(complaint);
             }
             cmd.Connection.Close();
             cmd.Connection.Dispose();
 
-            return ticketList;
+            return complaints;
         }
 
 
