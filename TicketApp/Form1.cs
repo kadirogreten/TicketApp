@@ -131,5 +131,10 @@ namespace TicketApp
             }
 
         }
+
+        private void dtgListele_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

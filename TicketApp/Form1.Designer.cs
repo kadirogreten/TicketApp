@@ -109,6 +109,7 @@
             this.dtgListele.Size = new System.Drawing.Size(661, 458);
             this.dtgListele.TabIndex = 2;
             this.dtgListele.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgListele_CellDoubleClick);
+            this.dtgListele.MouseHover += new System.EventHandler(this.dtgListele_MouseHover);
             // 
             // Title
             // 
@@ -300,7 +301,7 @@
             this.pnlBottom.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.pnlBottom.ColumnCount = 2;
             this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39759F));
-            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
             this.pnlBottom.Controls.Add(this.lblFirmName, 0, 0);
             this.pnlBottom.Controls.Add(this.lblUser, 0, 0);
             this.pnlBottom.Location = new System.Drawing.Point(3, 206);
@@ -317,7 +318,7 @@
             this.lblFirmName.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lblFirmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblFirmName.ForeColor = System.Drawing.Color.Sienna;
-            this.lblFirmName.Location = new System.Drawing.Point(100, 2);
+            this.lblFirmName.Location = new System.Drawing.Point(98, 2);
             this.lblFirmName.Name = "lblFirmName";
             this.lblFirmName.Size = new System.Drawing.Size(143, 61);
             this.lblFirmName.TabIndex = 3;
@@ -331,7 +332,7 @@
             this.lblUser.ForeColor = System.Drawing.Color.DarkGray;
             this.lblUser.Location = new System.Drawing.Point(5, 2);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(87, 61);
+            this.lblUser.Size = new System.Drawing.Size(85, 61);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "KullanıcıAdSoyad";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
