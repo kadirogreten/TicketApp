@@ -17,4 +17,6 @@
   *Þikayet listele label e týklanýca tüm þikayetlerin listelenmesi için clik altýnda complaint methodu çaðrýldý.
   *2.form yapýlarak user, firm  ve ticket ile þikayetlerin girileceði kýsým bitti.
   *orderby sorgularý bitti.
+  *lbl ara týklanýnca listeme yapacak iþlem bitti.
+
 
