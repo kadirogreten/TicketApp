@@ -81,7 +81,9 @@ namespace ServiceLayer
         //Şikayeti sil. Her üç tablodaki ilgili satırı sil.
         public static int DeleteComplaintById(int id)
         {
-            int data = 0;
+            int data = 0;            
+
+           
             return data;
         }
 

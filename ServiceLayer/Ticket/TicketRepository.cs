@@ -96,8 +96,7 @@ namespace ServiceLayer
 
             return data;
 
-        }
-              
+        }              
 
         
         public static int DeleteTicketById(int id)
