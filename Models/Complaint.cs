@@ -18,7 +18,8 @@ namespace Models
             public string  Address { get; set; }
             public string UserName { get; set; }            
             public string UserSurName { get; set; }
-            
-        
+            public string UserPhone { get; set; }
+
+
     }
 }

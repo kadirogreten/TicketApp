@@ -28,14 +28,12 @@ namespace TicketApp
                 user.Surname = txtSurname.Text;
                 user.Phone = txtPhone.Text;
             }
-            UserRepository.InsertUser(user);
-
+            
             Firm firm = new Firm();
             {
                 firm.FirmName = txtFirm.Text;
                 firm.Address = txtAddress.Text;
             }
-            FirmRepository.InsertFirm(firm);
 
             Ticket ticket = new Ticket();
             {
@@ -43,18 +41,30 @@ namespace TicketApp
                 ticket.Description = txtAddress.Text;
                 ticket.Detail = txtDetail.Text;
             }
-            TicketRepository.InsertTicket(ticket);
 
-           //texboxların boş geçilmemesi için yazdık.
+             //texboxların boş geçilmemesi için yazdık.
+            //messageboxta boş bırakılan alanın adı yer alsın diye yapılan array
+            string[] txt_alan_adlari = {"İsim","Soyisim","Telefon","Firma adı","Firma adresi","Şikayet konusu","açıklama","Detaylar"};
+
             foreach (Control ctl in this.Controls)
                 if (ctl is TextBox)
                 {
                     if (ctl.Text == String.Empty)
-                    {
-                        MessageBox.Show(Convert.ToString(((TextBox)ctl).Name + "Boş Alan Bırakmayınız!"));
+                    {                      
+                       MessageBox.Show(txt_alan_adlari[ctl.TabIndex] + " alanı boş bırakılamaz");                     
+                       
                     }
                 }
 
+
+            UserRepository.InsertUser(user);
+            FirmRepository.InsertFirm(firm);
+            TicketRepository.InsertTicket(ticket);
+            MessageBox.Show("Şikayetiniz başarıyla gönderilmiştir.");
+            MessageBox.Show("Anasayfaya yönlendirileceksiniz");
+            Form1 anasayfa = new Form1();
+            this.Hide();
+            anasayfa.Show();
         }
 
         private void frmSikayet_Load(object sender, EventArgs e)

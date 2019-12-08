@@ -50,7 +50,6 @@ namespace TicketApp
 
         private void lblSikayetListele_Click(object sender, EventArgs e)
         {
-               
             List<Complaint> complaints = ComplaintRepository.GetComplaints();
 
             foreach (var item in complaints)
@@ -58,6 +57,8 @@ namespace TicketApp
                 dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}");
                
             }
+
+                                             
         }
 
         private void dtgListele_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -95,14 +96,15 @@ namespace TicketApp
         private void btnSikayetYaz_Click(object sender, EventArgs e)
         {
             //şikayetin girileceği 2.formu oluştuduk.
-            frmSikayet yeniForm = new frmSikayet();         
+            frmSikayet yeniForm = new frmSikayet();
+            this.Hide();
             yeniForm.Show();
         }
 
         private void lblSikayetSahibiSirala_Click(object sender, EventArgs e)
         {
-            //labele a tıklanınca username e göre sıkralama yapılmasını sağladık.
-            List<Complaint> complaints = ComplaintRepository.OrderByComplaint();
+            //labele a tıklanınca username e göre sıralama yapılmasını sağladık.
+            List<Complaint> complaints = ComplaintRepository.OrderComplaintsByUserName();
 
             foreach (var item in complaints)
             {
@@ -113,8 +115,8 @@ namespace TicketApp
 
         private void lblFirmaSirala_Click(object sender, EventArgs e)
         {
-            //labele a tıklanınca firmname e göre sıkralama yapılmasını sağladık.
-            List<Complaint> complaints = ComplaintRepository.OrderByFirmName();
+            //labele a tıklanınca firmname e göre sıralama yapılmasını sağladık.
+            List<Complaint> complaints = ComplaintRepository.OrderComplaintsByFirmName();
 
             foreach (var item in complaints)
             {
@@ -126,8 +128,8 @@ namespace TicketApp
 
         private void lblTicketSirala_Click(object sender, EventArgs e)
         {
-            //labele a tıklanınca tittle başlığına göre sıkralama yapılmasını sağladık.
-            List<Complaint> complaints = ComplaintRepository.OrderByTitle();
+            //labele a tıklanınca tittle başlığına göre sıralama yapılmasını sağladık.
+            List<Complaint> complaints = ComplaintRepository.OrderComplaintsByTitle();
 
             foreach (var item in complaints)
             {
@@ -135,6 +137,11 @@ namespace TicketApp
 
             }
 
+        }
+
+        private void dtgListele_MouseHover(object sender, EventArgs e)
+        {
+           
         }
     }
 }
