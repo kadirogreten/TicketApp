@@ -78,5 +78,7 @@ namespace TicketApp
             //phone texbox ına sadece rakam girilmesi için yaptık.
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
     }
+}
 }
