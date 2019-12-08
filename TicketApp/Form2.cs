@@ -45,6 +45,16 @@ namespace TicketApp
             }
             TicketRepository.InsertTicket(ticket);
 
+           //texboxların boş geçilmemesi için yazdık.
+            foreach (Control ctl in this.Controls)
+                if (ctl is TextBox)
+                {
+                    if (ctl.Text == String.Empty)
+                    {
+                        MessageBox.Show(Convert.ToString(((TextBox)ctl).Name + "Boş Alan Bırakmayınız!"));
+                    }
+                }
+
         }
 
         private void frmSikayet_Load(object sender, EventArgs e)

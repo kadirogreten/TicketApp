@@ -102,20 +102,24 @@ namespace TicketApp
 
         private void lblSikayetSahibiSirala_Click(object sender, EventArgs e)
         {
-            List<User> userList = ComplaintRepository.OrderByUser();
-            foreach (var item in userList)
+            //labele a tıklanınca username e göre sıkralama yapılmasını sağladık.
+            List<Complaint> complaints = ComplaintRepository.OrderByComplaint();
+
+            foreach (var item in complaints)
             {
-                dtgListele.Rows.Add($"{item.Name}", $"{item.Surname}", $"{item.Phone}");
+                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}");
 
             }
         }
 
         private void lblFirmaSirala_Click(object sender, EventArgs e)
         {
-            List<Firm> firmList = ComplaintRepository.OrderByFirm();
-            foreach (var item in firmList)
+            //labele a tıklanınca firmname e göre sıkralama yapılmasını sağladık.
+            List<Complaint> complaints = ComplaintRepository.OrderByFirmName();
+
+            foreach (var item in complaints)
             {
-                dtgListele.Rows.Add($"{item.FirmName}", $"{item.Address}");
+                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}");
 
             }
 
@@ -123,10 +127,12 @@ namespace TicketApp
 
         private void lblTicketSirala_Click(object sender, EventArgs e)
         {
-            List<Ticket> ticketList = ComplaintRepository.OrderByComplaint();
-            foreach (var item in ticketList)
+            //labele a tıklanınca tittle başlığına göre sıkralama yapılmasını sağladık.
+            List<Complaint> complaints = ComplaintRepository.OrderByTitle();
+
+            foreach (var item in complaints)
             {
-                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}");
+                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}");
 
             }
 
