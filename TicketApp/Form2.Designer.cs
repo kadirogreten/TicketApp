@@ -52,21 +52,21 @@
             this.txtUser.Location = new System.Drawing.Point(212, 32);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
-            this.txtUser.TabIndex = 0;
+            this.txtUser.TabIndex = 7;
             // 
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(212, 58);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(100, 20);
-            this.txtSurname.TabIndex = 1;
+            this.txtSurname.TabIndex = 6;
             // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(212, 84);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(100, 20);
-            this.txtPhone.TabIndex = 2;
+            this.txtPhone.TabIndex = 5;
             // 
             // lblUser
             // 
@@ -118,21 +118,21 @@
             this.txtAddress.Location = new System.Drawing.Point(638, 58);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtAddress.TabIndex = 7;
+            this.txtAddress.TabIndex = 3;
             // 
             // txtFirm
             // 
             this.txtFirm.Location = new System.Drawing.Point(638, 32);
             this.txtFirm.Name = "txtFirm";
             this.txtFirm.Size = new System.Drawing.Size(100, 20);
-            this.txtFirm.TabIndex = 6;
+            this.txtFirm.TabIndex = 4;
             // 
             // txtTitle
             // 
             this.txtTitle.Location = new System.Drawing.Point(77, 152);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(661, 20);
-            this.txtTitle.TabIndex = 10;
+            this.txtTitle.TabIndex = 2;
             // 
             // lvlTitle
             // 
@@ -157,7 +157,7 @@
             this.txtDescription.Location = new System.Drawing.Point(77, 191);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(661, 20);
-            this.txtDescription.TabIndex = 12;
+            this.txtDescription.TabIndex = 1;
             // 
             // txtDetail
             // 
@@ -165,7 +165,7 @@
             this.txtDetail.Multiline = true;
             this.txtDetail.Name = "txtDetail";
             this.txtDetail.Size = new System.Drawing.Size(661, 129);
-            this.txtDetail.TabIndex = 14;
+            this.txtDetail.TabIndex = 0;
             // 
             // lblDetail
             // 

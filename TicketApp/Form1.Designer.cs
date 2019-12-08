@@ -291,7 +291,7 @@
             this.btnCevapla.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCevapla.Location = new System.Drawing.Point(66, 3);
             this.btnCevapla.Name = "btnCevapla";
-            this.btnCevapla.Size = new System.Drawing.Size(179, 34);
+            this.btnCevapla.Size = new System.Drawing.Size(182, 34);
             this.btnCevapla.TabIndex = 4;
             this.btnCevapla.Text = "Şikayeti Cevapla";
             this.btnCevapla.UseVisualStyleBackColor = false;
@@ -301,9 +301,9 @@
             this.pnlBottom.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.pnlBottom.ColumnCount = 2;
             this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39759F));
-            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
-            this.pnlBottom.Controls.Add(this.lblFirmName, 0, 0);
+            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 143F));
             this.pnlBottom.Controls.Add(this.lblUser, 0, 0);
+            this.pnlBottom.Controls.Add(this.lblFirmName, 1, 0);
             this.pnlBottom.Location = new System.Drawing.Point(3, 206);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.RowCount = 1;
@@ -318,9 +318,9 @@
             this.lblFirmName.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lblFirmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblFirmName.ForeColor = System.Drawing.Color.Sienna;
-            this.lblFirmName.Location = new System.Drawing.Point(98, 2);
+            this.lblFirmName.Location = new System.Drawing.Point(112, 2);
             this.lblFirmName.Name = "lblFirmName";
-            this.lblFirmName.Size = new System.Drawing.Size(143, 61);
+            this.lblFirmName.Size = new System.Drawing.Size(137, 61);
             this.lblFirmName.TabIndex = 3;
             this.lblFirmName.Text = "Firma Adı ve Şehir";
             this.lblFirmName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -332,7 +332,7 @@
             this.lblUser.ForeColor = System.Drawing.Color.DarkGray;
             this.lblUser.Location = new System.Drawing.Point(5, 2);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(85, 61);
+            this.lblUser.Size = new System.Drawing.Size(99, 61);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "KullanıcıAdSoyad";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
