@@ -31,13 +31,6 @@
             this.lblBaslik = new System.Windows.Forms.Label();
             this.lblSikayetListele = new System.Windows.Forms.Label();
             this.dtgListele = new System.Windows.Forms.DataGridView();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SurName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSikayetYaz = new System.Windows.Forms.Button();
             this.lblSikayetSahibiSirala = new System.Windows.Forms.Label();
             this.lblFirmaSirala = new System.Windows.Forms.Label();
@@ -54,6 +47,14 @@
             this.pnlTop = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SurName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListele)).BeginInit();
             this.pnlBig.SuspendLayout();
             this.pnlLCenter.SuspendLayout();
@@ -66,7 +67,7 @@
             // 
             this.lblBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblBaslik.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lblBaslik.Location = new System.Drawing.Point(508, 3);
+            this.lblBaslik.Location = new System.Drawing.Point(550, 8);
             this.lblBaslik.Name = "lblBaslik";
             this.lblBaslik.Size = new System.Drawing.Size(202, 52);
             this.lblBaslik.TabIndex = 0;
@@ -77,7 +78,7 @@
             // 
             this.lblSikayetListele.BackColor = System.Drawing.Color.Tan;
             this.lblSikayetListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSikayetListele.Location = new System.Drawing.Point(273, 6);
+            this.lblSikayetListele.Location = new System.Drawing.Point(272, 11);
             this.lblSikayetListele.Name = "lblSikayetListele";
             this.lblSikayetListele.Size = new System.Drawing.Size(206, 53);
             this.lblSikayetListele.TabIndex = 1;
@@ -100,71 +101,23 @@
             this.FirmName,
             this.Address,
             this.UserName,
-            this.SurName});
+            this.SurName,
+            this.Column1});
             this.dtgListele.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dtgListele.Location = new System.Drawing.Point(278, 73);
+            this.dtgListele.Location = new System.Drawing.Point(268, 88);
             this.dtgListele.MultiSelect = false;
             this.dtgListele.Name = "dtgListele";
             this.dtgListele.ReadOnly = true;
-            this.dtgListele.Size = new System.Drawing.Size(661, 458);
+            this.dtgListele.Size = new System.Drawing.Size(729, 441);
             this.dtgListele.TabIndex = 2;
             this.dtgListele.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgListele_CellDoubleClick);
             this.dtgListele.MouseHover += new System.EventHandler(this.dtgListele_MouseHover);
-            // 
-            // Title
-            // 
-            this.Title.HeaderText = "Şikayet Konusu";
-            this.Title.Name = "Title";
-            this.Title.ReadOnly = true;
-            this.Title.Width = 97;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Açıklamalar";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 86;
-            // 
-            // Detail
-            // 
-            this.Detail.HeaderText = "Detaylar";
-            this.Detail.Name = "Detail";
-            this.Detail.ReadOnly = true;
-            this.Detail.Width = 71;
-            // 
-            // FirmName
-            // 
-            this.FirmName.HeaderText = "Firma Adı";
-            this.FirmName.Name = "FirmName";
-            this.FirmName.ReadOnly = true;
-            this.FirmName.Width = 69;
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Firma Adresi";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 82;
-            // 
-            // UserName
-            // 
-            this.UserName.HeaderText = "Şikayetçinin Adı";
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
-            this.UserName.Width = 98;
-            // 
-            // SurName
-            // 
-            this.SurName.HeaderText = "Şikayetçinin Soyadı";
-            this.SurName.Name = "SurName";
-            this.SurName.ReadOnly = true;
-            this.SurName.Width = 114;
             // 
             // btnSikayetYaz
             // 
             this.btnSikayetYaz.BackColor = System.Drawing.Color.Tan;
             this.btnSikayetYaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSikayetYaz.Location = new System.Drawing.Point(736, 1);
+            this.btnSikayetYaz.Location = new System.Drawing.Point(794, 6);
             this.btnSikayetYaz.Name = "btnSikayetYaz";
             this.btnSikayetYaz.Size = new System.Drawing.Size(203, 58);
             this.btnSikayetYaz.TabIndex = 3;
@@ -176,10 +129,10 @@
             // 
             this.lblSikayetSahibiSirala.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lblSikayetSahibiSirala.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSikayetSahibiSirala.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSikayetSahibiSirala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblSikayetSahibiSirala.Location = new System.Drawing.Point(14, 88);
             this.lblSikayetSahibiSirala.Name = "lblSikayetSahibiSirala";
-            this.lblSikayetSahibiSirala.Size = new System.Drawing.Size(258, 26);
+            this.lblSikayetSahibiSirala.Size = new System.Drawing.Size(248, 26);
             this.lblSikayetSahibiSirala.TabIndex = 4;
             this.lblSikayetSahibiSirala.Text = "Şikayet Sahibine Göre Sırala";
             this.lblSikayetSahibiSirala.Click += new System.EventHandler(this.lblSikayetSahibiSirala_Click);
@@ -188,10 +141,10 @@
             // 
             this.lblFirmaSirala.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lblFirmaSirala.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFirmaSirala.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblFirmaSirala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblFirmaSirala.Location = new System.Drawing.Point(14, 145);
             this.lblFirmaSirala.Name = "lblFirmaSirala";
-            this.lblFirmaSirala.Size = new System.Drawing.Size(258, 26);
+            this.lblFirmaSirala.Size = new System.Drawing.Size(248, 26);
             this.lblFirmaSirala.TabIndex = 5;
             this.lblFirmaSirala.Text = "Firma İsmine Göre Sırala";
             this.lblFirmaSirala.Click += new System.EventHandler(this.lblFirmaSirala_Click);
@@ -200,10 +153,10 @@
             // 
             this.lblTicketSirala.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lblTicketSirala.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTicketSirala.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTicketSirala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblTicketSirala.Location = new System.Drawing.Point(14, 205);
             this.lblTicketSirala.Name = "lblTicketSirala";
-            this.lblTicketSirala.Size = new System.Drawing.Size(258, 26);
+            this.lblTicketSirala.Size = new System.Drawing.Size(248, 26);
             this.lblTicketSirala.TabIndex = 6;
             this.lblTicketSirala.Text = "Şikayet Konusuna Göre Sırala";
             this.lblTicketSirala.Click += new System.EventHandler(this.lblTicketSirala_Click);
@@ -217,7 +170,7 @@
             this.pnlBig.Controls.Add(this.pnlDeneme2, 0, 3);
             this.pnlBig.Controls.Add(this.pnlBottom, 0, 2);
             this.pnlBig.Controls.Add(this.pnlTop, 0, 0);
-            this.pnlBig.Location = new System.Drawing.Point(502, 202);
+            this.pnlBig.Location = new System.Drawing.Point(504, 176);
             this.pnlBig.Name = "pnlBig";
             this.pnlBig.RowCount = 4;
             this.pnlBig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.85572F));
@@ -378,12 +331,68 @@
             this.lblDescription.Text = "Description";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Title
+            // 
+            this.Title.HeaderText = "Şikayet Konusu";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            this.Title.Width = 97;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Açıklamalar";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 86;
+            // 
+            // Detail
+            // 
+            this.Detail.HeaderText = "Detaylar";
+            this.Detail.Name = "Detail";
+            this.Detail.ReadOnly = true;
+            this.Detail.Width = 71;
+            // 
+            // FirmName
+            // 
+            this.FirmName.HeaderText = "Firma Adı";
+            this.FirmName.Name = "FirmName";
+            this.FirmName.ReadOnly = true;
+            this.FirmName.Width = 69;
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Firma Adresi";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 82;
+            // 
+            // UserName
+            // 
+            this.UserName.HeaderText = "Şikayetçinin Adı";
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            this.UserName.Width = 98;
+            // 
+            // SurName
+            // 
+            this.SurName.HeaderText = "Şikayetçinin Soyadı";
+            this.SurName.Name = "SurName";
+            this.SurName.ReadOnly = true;
+            this.SurName.Width = 114;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Telefon";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 68;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(943, 538);
+            this.ClientSize = new System.Drawing.Size(1001, 532);
             this.Controls.Add(this.pnlBig);
             this.Controls.Add(this.lblTicketSirala);
             this.Controls.Add(this.lblFirmaSirala);
@@ -416,13 +425,6 @@
         private System.Windows.Forms.Label lblSikayetSahibiSirala;
         private System.Windows.Forms.Label lblFirmaSirala;
         private System.Windows.Forms.Label lblTicketSirala;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Detail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirmName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SurName;
         private System.Windows.Forms.TableLayoutPanel pnlBig;
         private System.Windows.Forms.TableLayoutPanel pnlLCenter;
         private System.Windows.Forms.Label lblDetail;
@@ -435,6 +437,14 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Button btnGizle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Detail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirmName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SurName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
 
