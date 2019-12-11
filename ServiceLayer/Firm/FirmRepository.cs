@@ -41,7 +41,7 @@ namespace ServiceLayer
         //Firm yı getiren sorgu methodu
         public static List<Firm> GetFirms()
         {
-            string commandText = $"SELECT [Id],[FirmName],[Address], FROM [dbo].[Firm]";
+            string commandText = $"SELECT [Id],[FirmName],[Address] FROM [dbo].[Firm]";
 
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 

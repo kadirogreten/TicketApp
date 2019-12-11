@@ -57,14 +57,46 @@ namespace TicketApp
                 }
 
 
-            UserRepository.InsertUser(user);
-            FirmRepository.InsertFirm(firm);
-            TicketRepository.InsertTicket(ticket);
-            MessageBox.Show("Şikayetiniz başarıyla gönderilmiştir.");
-            MessageBox.Show("Anasayfaya yönlendirileceksiniz");
-            Form1 anasayfa = new Form1();
-            this.Hide();
-            anasayfa.Show();
+            var result = UserRepository.InsertUser(user);
+            var result_Firm = FirmRepository.InsertFirm(firm);
+            var userId = 0;
+            var firmId = 0;
+            if (result > 0 && result_Firm > 0)
+            {
+                
+                var users = UserRepository.GetUsers()
+                .Where(a => (a.Name == user.Name) && (a.Surname == user.Surname) && (a.Phone == user.Phone)).Take(1);
+
+                var firms = FirmRepository.GetFirms()
+               .Where(a => (a.FirmName == firm.FirmName) && (a.Address == firm.Address)).Take(1);
+
+
+                foreach (var item in users)
+                {
+                    userId = item.Id;
+                }
+
+                foreach (var item in firms)
+                {
+                    firmId = item.Id;
+                }
+
+                ticket.UserId = userId;
+                ticket.FirmId = firmId;
+
+                TicketRepository.InsertTicket(ticket);
+                MessageBox.Show("Şikayetiniz başarıyla gönderilmiştir.");
+                MessageBox.Show("Anasayfaya yönlendirileceksiniz");
+                Form1 anasayfa = new Form1();
+                this.Hide();
+                anasayfa.Show();
+            }
+            else
+            {
+
+            }
+
+           
         }
 
         private void frmSikayet_Load(object sender, EventArgs e)
@@ -80,5 +112,4 @@ namespace TicketApp
         }
 
     }
-}
 }

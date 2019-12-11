@@ -46,9 +46,9 @@ namespace ServiceLayer
         //bütün şikayetleri firma adı ve şikayet sahibi ile birlikte listelemek için metod (inner join)
         public static List<Complaint> GetComplaints()
         {
-            string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
-                $"[Firm.FirmName],[Firm.Address],[User.Name],[User.Surname],[User.Phone] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
-                $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id]";
+            string commandText = $"SELECT t.Title,t.Description,t.Detail,f.FirmName,f.Address,u.Name,u.Surname,u.Phone FROM [dbo].[Ticket] t" +
+                $" inner join [dbo].[Firm] f on t.FirmaId = f.Id" +
+                $" inner join [dbo].[User] u on t.UserId = u.Id";
 
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 

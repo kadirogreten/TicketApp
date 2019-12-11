@@ -12,7 +12,7 @@ namespace ServiceLayer
     {
         public static Ticket GetTicketById(int id)
         {
-            string commandText= $"SELECT [Id],[UserId],[FirmId],[Title],[Description],[Detail] FROM [dbo].[Ticket] where [Id]={id}";
+            string commandText= $"SELECT [Id],[UserId],[FirmaId],[Title],[Description],[Detail] FROM [dbo].[Ticket] where [Id]={id}";
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 
             SqlDataReader reader= cmd.ExecuteReader();
@@ -40,7 +40,7 @@ namespace ServiceLayer
 
         public static List<Ticket> GetTickets()
         {
-            string commandText = $"SELECT [Id],[UserId],[FirmId],[Title],[Description],[Detail] FROM [dbo].[Ticket]";
+            string commandText = $"SELECT [Id],[UserId],[FirmaId],[Title],[Description],[Detail] FROM [dbo].[Ticket]";
 
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 
@@ -72,7 +72,7 @@ namespace ServiceLayer
         }
         public static int InsertTicket(Ticket ticket)
         {
-            string commandText = $"INSERT INTO [dbo].[Ticket]([UserId],[FirmId],[Title],[Description],[Detail])VALUES('{ticket.UserId}','{ticket.FirmId}','{ticket.Title}','{ticket.Description}','{ticket.Detail}')";
+            string commandText = $"INSERT INTO [dbo].[Ticket]([UserId],[FirmaId],[Title],[Description],[Detail])VALUES('{ticket.UserId}','{ticket.FirmId}','{ticket.Title}','{ticket.Description}','{ticket.Detail}')";
 
             int data = 0;
             SqlCommand cmd = new SqlCommand();

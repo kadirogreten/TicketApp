@@ -50,7 +50,10 @@ namespace TicketApp
 
         private void lblSikayetListele_Click(object sender, EventArgs e)
         {
-            List<Complaint> complaints = ComplaintRepository.GetComplaints();
+            List<Complaint> complaints = new List<Complaint>();
+            dtgListele.DataSource = null;
+            dtgListele.Rows.Clear();
+            complaints = ComplaintRepository.GetComplaints();
 
             foreach (var item in complaints)
             {
@@ -72,13 +75,13 @@ namespace TicketApp
 
             // Ve hücrelerdeki değerler paneldeki labellara aktarılacak
             int selected = dtgListele.SelectedCells[0].RowIndex;
-            string title = dtgListele.Rows[selected].Cells[0].Value.ToString();
-            string description = dtgListele.Rows[selected].Cells[0].Value.ToString();
-            string detail = dtgListele.Rows[selected].Cells[0].Value.ToString();
-            string firm_name = dtgListele.Rows[selected].Cells[0].Value.ToString();
-            string adress = dtgListele.Rows[selected].Cells[0].Value.ToString();
-            string user_name = dtgListele.Rows[selected].Cells[0].Value.ToString();
-            string user_surname = dtgListele.Rows[selected].Cells[0].Value.ToString();
+            string title = dtgListele.Rows[selected].Cells[1].Value.ToString();
+            string description = dtgListele.Rows[selected].Cells[2].Value.ToString();
+            string detail = dtgListele.Rows[selected].Cells[3].Value.ToString();
+            string firm_name = dtgListele.Rows[selected].Cells[4].Value.ToString();
+            string adress = dtgListele.Rows[selected].Cells[5].Value.ToString();
+            string user_name = dtgListele.Rows[selected].Cells[6].Value.ToString();
+            string user_surname = dtgListele.Rows[selected].Cells[7].Value.ToString();
             lblTitle.Text = title;
             lblDescription.Text = description;
             lblDetail.Text = detail;
