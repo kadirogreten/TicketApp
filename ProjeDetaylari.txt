@@ -20,3 +20,11 @@
   *lbl ara týklanýnca listeme yapacak iþlem bitti.
 
 
+
+*form 2 bug fixed.
+*ticket repository bug fixed.
+*form1.cs filtre sorgularý düzeltilmedi.
+*datagridview bug fixed.
+*textbox validation düzeltilecek.
+
+
