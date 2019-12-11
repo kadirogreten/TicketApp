@@ -27,4 +27,7 @@
 *datagridview bug fixed.
 *textbox validation düzeltilecek.
 
+*firmaya ait þikayetler 
+	- combobox tan firmalarý getir.
+
 
