@@ -66,6 +66,6 @@
     <Build Include="dbo\Tables\Firm.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Ticket.DataAccessLayer.publish.xml" />
+    <None Include="Ticket_1.DataAccessLayer.publish.xml" />
   </ItemGroup>
 </Project>

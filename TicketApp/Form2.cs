@@ -28,7 +28,7 @@ namespace TicketApp
                 user.Surname = txtSurname.Text;
                 user.Phone = txtPhone.Text;
             }
-            
+
             Firm firm = new Firm();
             {
                 firm.FirmName = txtFirm.Text;
@@ -42,9 +42,9 @@ namespace TicketApp
                 ticket.Detail = txtDetail.Text;
             }
 
-             //texboxların boş geçilmemesi için yazdık.
+            //texboxların boş geçilmemesi için yazdık.
             //messageboxta boş bırakılan alanın adı yer alsın diye yapılan array
-            string[] txt_alan_adlari = {"İsim","Soyisim","Telefon","Firma adı","Firma adresi","Şikayet konusu","açıklama","Detaylar"};
+            string[] txt_alan_adlari = { "İsim", "Soyisim", "Telefon", "Firma adı", "Firma adresi", "Şikayet konusu", "açıklama", "Detaylar" };
 
             foreach (Control ctl in this.Controls)
             {

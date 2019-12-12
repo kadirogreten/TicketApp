@@ -94,6 +94,26 @@ namespace ServiceLayer
             return data;
         }
 
+        public static int GetFirmCurrentId()
+        {
+            int firm_currentid = 0;
+            string commandText = $"SELECT [Id] FROM [dbo].[Firm] where [Id]=(IDENT_CURRENT ('[dbo].[Firm]'))";
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Firm firm = new Firm();
+            while (reader.Read())
+            {
+                firm = new Firm
+                {
+                    Id = reader.GetInt32(0)
+                };
+                firm_currentid = firm.Id;
+
+            }
+            return firm_currentid;
+        }
+
+
         public static int DeleteFirmById(int id)
         {
             string commandText = $"Delete FROM [dbo].[Firm] where [Id]={id}";
