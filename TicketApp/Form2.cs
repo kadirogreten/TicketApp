@@ -17,8 +17,20 @@ namespace TicketApp
         public frmSikayet()
         {
             InitializeComponent();
+            int k = 0;
+
+            foreach (Control control in Controls)
+            {
+                if (control is TextBox)
+                {
+
+                    control.TabIndex = k;
+                    k++;
+                }
+            }
+
         }
-      
+
         private void btnSikayetGönder_Click(object sender, EventArgs e)
         {
             //texboxlardan gelen değerler user, firm ve ticket için eşleştirildi.
@@ -44,29 +56,40 @@ namespace TicketApp
 
             //texboxların boş geçilmemesi için yazdık.
             //messageboxta boş bırakılan alanın adı yer alsın diye yapılan array
-            string[] txt_alan_adlari = { "İsim", "Soyisim", "Telefon", "Firma adı", "Firma adresi", "Şikayet konusu", "açıklama", "Detaylar" };
 
+            List<string> txt_alan_adlari = new List<string>();
             foreach (Control ctl in this.Controls)
             {
                 if (ctl is TextBox)
                 {
-                    if (ctl.Text == String.Empty)
+                    txt_alan_adlari.Add(ctl.Name.Substring(3, ctl.Name.Length - 3));
+
+                    foreach (var item in txt_alan_adlari)
                     {
-                        MessageBox.Show(txt_alan_adlari[ctl.TabIndex] + " alanı boş bırakılamaz");
-                        return;
+                        if (ctl.Text == String.Empty)
+                        {
+
+
+                            MessageBox.Show(item + " alanı boş bırakılamaz");
+                            return;
+                        }
                     }
+
+
                 }
             }
-               
 
-            
+
+
+
+
             var result = UserRepository.InsertUser(user);
             var result_Firm = FirmRepository.InsertFirm(firm);
             var userId = 0;
             var firmId = 0;
             if (result > 0 && result_Firm > 0)
             {
-                
+
                 var users = UserRepository.GetUsers()
                 .Where(a => (a.Name == user.Name) && (a.Surname == user.Surname) && (a.Phone == user.Phone)).Take(1);
 
@@ -87,7 +110,7 @@ namespace TicketApp
                 ticket.UserId = userId;
                 ticket.FirmId = firmId;
 
-                
+
 
                 TicketRepository.InsertTicket(ticket);
                 MessageBox.Show("Şikayetiniz başarıyla gönderilmiştir.");
@@ -102,13 +125,13 @@ namespace TicketApp
             }
 
 
-           
+
         }
 
         private void frmSikayet_Load(object sender, EventArgs e)
         {
 
-           
+
         }
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
