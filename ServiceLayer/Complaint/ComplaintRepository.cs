@@ -94,9 +94,7 @@ namespace ServiceLayer
         public static List<Complaint> OrderComplaintsByUserName()
         {
             //username göre sıralama
-            string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
-                $"[Firm.FirmName],[Firm.Address],[User.Name],[User.Surname],[User.Phone] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
-                $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id] order by [User.Name]";
+            string commandText = $"SELECT Ticket.Title,Ticket.Description,Ticket.Detail, Firm.FirmName,Firm.Address,[dbo].[User].Name,[dbo].[User].Surname,[dbo].[User].Phone FROM[dbo].[Ticket] inner join[dbo].[Firm] on Ticket.FirmaId=Firm.Id inner join[dbo].[User] on Ticket.UserId=[dbo].[User].Id order by [dbo].[User].Name";
 
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 
@@ -117,7 +115,6 @@ namespace ServiceLayer
                     UserName = reader.GetString(5),
                     UserSurName = reader.GetString(6),
                     UserPhone = reader.GetString(7)
-
                 };
 
                 complaints.Add(complaint);
@@ -130,11 +127,11 @@ namespace ServiceLayer
         public static List<Complaint> OrderComplaintsByFirmName()
         {
             //firmname göre sıralama
-            string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
-                $"[Firm.FirmName],[Firm.Address],[User.Name],[User.Surname],[User.Phone] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
-                $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id] order by [Firm.FirmName]";
+            string commandText = $"SELECT Ticket.Title,Ticket.Description,Ticket.Detail," +
+                $"Firm.FirmName,Firm.Address,[dbo].[User].Name,[dbo].[User].Surname,[dbo].[User].Phone FROM[dbo].[Ticket] inner join[dbo].[Firm] on Ticket.FirmaId=Firm.Id inner join[dbo].[User] on Ticket.UserId=[dbo].[User].Id order by Firm.FirmName";
 
-            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+   var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -166,9 +163,8 @@ namespace ServiceLayer
         public static List<Complaint> OrderComplaintsByTitle()
         {
             //tittle göre sıralama
-            string commandText = $"SELECT [Ticket.Title],[Ticket.Description],[Ticket.Detail]," +
-                $"[Firm.FirmName],[Firm.Address],[User.Name],[User.Surname] FROM [dbo].[Ticket] inner join [dbo].[Firm] on [Ticket.FirmId]=[Firm.Id]" +
-                $" inner join [dbo].[User] on [Ticket.UserId]=[User.Id] order by [Ticket.Title]";
+            string commandText = $"SELECT Ticket.Title,Ticket.Description,Ticket.Detail," +
+                $"Firm.FirmName,Firm.Address,[dbo].[User].Name,[dbo].[User].Surname,[dbo].[User].Phone FROM[dbo].[Ticket] inner join[dbo].[Firm] on Ticket.FirmaId=Firm.Id inner join[dbo].[User] on Ticket.UserId=[dbo].[User].Id order by Ticket.Title";
 
             var cmd = SqlConnectionExtension.ConnectToDb(commandText);
 

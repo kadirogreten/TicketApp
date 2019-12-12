@@ -107,17 +107,19 @@ namespace TicketApp
         private void lblSikayetSahibiSirala_Click(object sender, EventArgs e)
         {
             //labele a tıklanınca username e göre sıralama yapılmasını sağladık.
+            dtgListele.Rows.Clear();
             List<Complaint> complaints = ComplaintRepository.OrderComplaintsByUserName();
 
             foreach (var item in complaints)
             {
-                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}", $"{item.UserPhone}");
+                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.Address}", $"{item.UserName}", $"{item.UserSurName}",  $"{item.UserPhone}");
 
             }
         }
 
         private void lblFirmaSirala_Click(object sender, EventArgs e)
         {
+            dtgListele.Rows.Clear();
             //labele a tıklanınca firmname e göre sıralama yapılmasını sağladık.
             List<Complaint> complaints = ComplaintRepository.OrderComplaintsByFirmName();
 
@@ -131,6 +133,7 @@ namespace TicketApp
 
         private void lblTicketSirala_Click(object sender, EventArgs e)
         {
+            dtgListele.Rows.Clear();
             //labele a tıklanınca tittle başlığına göre sıralama yapılmasını sağladık.
             List<Complaint> complaints = ComplaintRepository.OrderComplaintsByTitle();
 

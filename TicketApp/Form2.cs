@@ -82,8 +82,29 @@ namespace TicketApp
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             //phone texbox ına sadece rakam girilmesi için yaptık.
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            if (Char.IsNumber((char)e.KeyChar) || e.KeyChar == (char)8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            var chars = txtPhone.Text.ToCharArray();
+
+            for (int i = 0; i < chars.Length; i++)
+            {
+                if (Char.IsLetter(chars[i]) || !Char.IsDigit(chars[i]) || Char.IsWhiteSpace(chars[i]))
+                {
+                    MessageBox.Show("Harf Giremezsiniz!");
+                    txtPhone.Text = string.Empty;
+                }
+            }
+
+        }
     }
 }
