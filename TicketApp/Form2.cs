@@ -47,16 +47,19 @@ namespace TicketApp
             string[] txt_alan_adlari = {"İsim","Soyisim","Telefon","Firma adı","Firma adresi","Şikayet konusu","açıklama","Detaylar"};
 
             foreach (Control ctl in this.Controls)
+            {
                 if (ctl is TextBox)
                 {
                     if (ctl.Text == String.Empty)
-                    {                      
-                       MessageBox.Show(txt_alan_adlari[ctl.TabIndex] + " alanı boş bırakılamaz");                     
-                       
+                    {
+                        MessageBox.Show(txt_alan_adlari[ctl.TabIndex] + " alanı boş bırakılamaz");
+                        return;
                     }
                 }
+            }
+               
 
-
+            
             var result = UserRepository.InsertUser(user);
             var result_Firm = FirmRepository.InsertFirm(firm);
             var userId = 0;
@@ -84,6 +87,8 @@ namespace TicketApp
                 ticket.UserId = userId;
                 ticket.FirmId = firmId;
 
+                
+
                 TicketRepository.InsertTicket(ticket);
                 MessageBox.Show("Şikayetiniz başarıyla gönderilmiştir.");
                 MessageBox.Show("Anasayfaya yönlendirileceksiniz");
@@ -95,6 +100,7 @@ namespace TicketApp
             {
 
             }
+
 
            
         }
