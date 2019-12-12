@@ -103,6 +103,30 @@ namespace ServiceLayer
 
         }
 
+        //Userin son idsini getiren metod
+        public static int GetUserCurrentId() 
+        {
+            int user_currentid = 0;
+           
+            string commandText = $"SELECT [Id] FROM [dbo].[User] where [Id]=(IDENT_CURRENT ('[dbo].[User]'))";
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+            SqlDataReader reader = cmd.ExecuteReader();
+            User user = new User();
+            while (reader.Read())
+            {
+                user = new User
+                {
+                    Id = reader.GetInt32(0)                                    
+                };
+                user_currentid = user.Id;
+                
+            }
+           
+            return user_currentid;
+        }
+
+
+
         public static int DeleteUserById(int id)
         {
             string commandText = $"Delete FROM [dbo].[User] where [Id]={id}";
