@@ -79,36 +79,9 @@ namespace TicketApp
                 }
             }
 
-
-
-            var result = UserRepository.InsertUser(user);
-            var result_Firm = FirmRepository.InsertFirm(firm);
-            var userId = 0;
-            var firmId = 0;
-            if (result > 0 && result_Firm > 0)
-            {
-
-                var users = UserRepository.GetUsers()
-                .Where(a => (a.Name == user.Name) && (a.Surname == user.Surname) && (a.Phone == user.Phone)).Take(1);
-
-                var firms = FirmRepository.GetFirms()
-               .Where(a => (a.FirmName == firm.FirmName) && (a.Address == firm.Address)).Take(1);
-
-
-                foreach (var item in users)
-                {
-                    userId = item.Id;
-                }
-
-                foreach (var item in firms)
-                {
-                    firmId = item.Id;
-                }
-
-                ticket.UserId = userId;
-                ticket.FirmId = firmId;
-
-
+            ticket.UserId = UserRepository.GetUserCurrentId();
+            ticket.FirmId = FirmRepository.GetFirmCurrentId();
+            
 
                 TicketRepository.InsertTicket(ticket);
                 MessageBox.Show("Şikayetiniz başarıyla gönderilmiştir.");
@@ -116,12 +89,7 @@ namespace TicketApp
                 Form1 anasayfa = new Form1();
                 this.Hide();
                 anasayfa.Show();
-            }
-            else
-            {
-
-            }
-
+          
 
 
         }
