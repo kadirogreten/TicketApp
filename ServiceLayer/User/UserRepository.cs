@@ -121,7 +121,9 @@ namespace ServiceLayer
                 user_currentid = user.Id;
                 
             }
-           
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
+
             return user_currentid;
         }
 

@@ -131,7 +131,11 @@ namespace ServiceLayer
                 firm_currentid = firm.Id;
 
             }
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
             return firm_currentid;
+            
+
         }
 
 

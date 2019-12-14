@@ -79,16 +79,17 @@ namespace TicketApp
                 }
             }
 
+            UserRepository.InsertUser(user);
             ticket.UserId = UserRepository.GetUserCurrentId();
+            FirmRepository.InsertFirm(firm);
             ticket.FirmId = FirmRepository.GetFirmCurrentId();
-            
 
-                TicketRepository.InsertTicket(ticket);
-                MessageBox.Show("Şikayetiniz başarıyla gönderilmiştir.");
-                MessageBox.Show("Anasayfaya yönlendirileceksiniz");
-                Form1 anasayfa = new Form1();
-                this.Hide();
-                anasayfa.Show();
+            TicketRepository.InsertTicket(ticket);
+            MessageBox.Show("Şikayetiniz başarıyla gönderilmiştir.");
+            MessageBox.Show("Anasayfaya yönlendirileceksiniz");
+            Form1 anasayfa = new Form1();
+            this.Hide();
+            anasayfa.Show();
           
 
 

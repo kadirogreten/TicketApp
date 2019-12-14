@@ -56,6 +56,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.cmbFirma = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListele)).BeginInit();
             this.pnlBig.SuspendLayout();
             this.pnlLCenter.SuspendLayout();
@@ -396,11 +397,22 @@
             this.cmbFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbFirma.FormattingEnabled = true;
             this.cmbFirma.IntegralHeight = false;
-            this.cmbFirma.Location = new System.Drawing.Point(12, 206);
+            this.cmbFirma.Location = new System.Drawing.Point(12, 271);
             this.cmbFirma.Name = "cmbFirma";
             this.cmbFirma.Size = new System.Drawing.Size(250, 28);
             this.cmbFirma.TabIndex = 8;
             this.cmbFirma.SelectedIndexChanged += new System.EventHandler(this.cmbFirma_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(12, 237);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(250, 31);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Firmanın aldığı şikayetler";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -408,6 +420,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1001, 532);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbFirma);
             this.Controls.Add(this.pnlBig);
             this.Controls.Add(this.lblTicketSirala);
@@ -462,6 +475,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SurName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.ComboBox cmbFirma;
+        private System.Windows.Forms.Label label1;
     }
 }
 
