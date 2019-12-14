@@ -143,7 +143,7 @@ namespace TicketApp
 
             foreach (var item in complaints)
             {
-                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}", $"{item.UserPhone}");
+                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.Address}",  $"{item.UserName}", $"{item.UserSurName}", $"{item.UserPhone}");
 
             }
             ;

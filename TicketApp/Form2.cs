@@ -50,7 +50,7 @@ namespace TicketApp
             Ticket ticket = new Ticket();
             {
                 ticket.Title = txtTitle.Text;
-                ticket.Description = txtAddress.Text;
+                ticket.Description = txtDescription.Text;
                 ticket.Detail = txtDetail.Text;
             }
 
@@ -79,9 +79,9 @@ namespace TicketApp
                 }
             }
 
-            UserRepository.InsertUser(user);
-            ticket.UserId = UserRepository.GetUserCurrentId();
+            UserRepository.InsertUser(user);            
             FirmRepository.InsertFirm(firm);
+            ticket.UserId = UserRepository.GetUserCurrentId();
             ticket.FirmId = FirmRepository.GetFirmCurrentId();
 
             TicketRepository.InsertTicket(ticket);
