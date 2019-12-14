@@ -81,8 +81,6 @@ namespace TicketApp
 
 
 
-
-
             var result = UserRepository.InsertUser(user);
             var result_Firm = FirmRepository.InsertFirm(firm);
             var userId = 0;
