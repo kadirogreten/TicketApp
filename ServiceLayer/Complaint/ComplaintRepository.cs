@@ -81,6 +81,42 @@ namespace ServiceLayer
             return complaints;
         }
 
+        public static List<Complaint> GetComplaintsByFirmName(string firm_name)
+        {
+            string commandText = $"SELECT t.Title,t.Description,t.Detail,f.FirmName,f.Address,u.Name,u.Surname,u.Phone FROM [dbo].[Ticket] t" +
+                $" inner join [dbo].[Firm] f on t.FirmaId = f.Id" +
+                $" inner join [dbo].[User] u on t.UserId = u.Id where f.FirmName= '{firm_name}'";
+
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            Complaint complaint = new Complaint();
+            List<Complaint> complaints = new List<Complaint>();
+
+            while (reader.Read())
+            {
+                complaint = new Complaint
+                {
+                    Title = reader.GetString(0),
+                    Description = reader.GetString(1),
+                    Detail = reader.GetString(2),
+                    FirmName = reader.GetString(3),
+                    Address = reader.GetString(4),
+                    UserName = reader.GetString(5),
+                    UserSurName = reader.GetString(6),
+                    UserPhone = reader.GetString(7)
+
+
+                };
+
+                complaints.Add(complaint);
+            }
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
+
+            return complaints;
+        }
 
         //Şikayeti sil. Her üç tablodaki ilgili satırı sil.
         public static int DeleteComplaintById(int id)

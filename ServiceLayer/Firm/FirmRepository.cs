@@ -66,6 +66,27 @@ namespace ServiceLayer
             return firms;
         }
 
+        
+        public static List<string> GetFirmNames()
+        {            
+            string commandText = $"SELECT distinct [FirmName] FROM [dbo].[Firm]";
+
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<string> firm_names = new List<string>();
+            string firm_name;
+           
+            while (reader.Read())
+            {
+               firm_name = reader.GetString(0);                 
+               firm_names.Add(firm_name);                
+            }
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
+            return firm_names;
+        }
+
         //firm a insert metodu eklendi.
         public static int InsertFirm(Firm firm)
         {

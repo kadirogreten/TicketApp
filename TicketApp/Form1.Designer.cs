@@ -31,6 +31,14 @@
             this.lblBaslik = new System.Windows.Forms.Label();
             this.lblSikayetListele = new System.Windows.Forms.Label();
             this.dtgListele = new System.Windows.Forms.DataGridView();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SurName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSikayetYaz = new System.Windows.Forms.Button();
             this.lblSikayetSahibiSirala = new System.Windows.Forms.Label();
             this.lblFirmaSirala = new System.Windows.Forms.Label();
@@ -42,19 +50,12 @@
             this.btnGizle = new System.Windows.Forms.Button();
             this.btnCevapla = new System.Windows.Forms.Button();
             this.pnlBottom = new System.Windows.Forms.TableLayoutPanel();
-            this.lblFirmName = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
+            this.lblFirmName = new System.Windows.Forms.Label();
             this.pnlTop = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SurName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbFirma = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListele)).BeginInit();
             this.pnlBig.SuspendLayout();
             this.pnlLCenter.SuspendLayout();
@@ -113,6 +114,62 @@
             this.dtgListele.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgListele_CellDoubleClick);
             this.dtgListele.MouseHover += new System.EventHandler(this.dtgListele_MouseHover);
             // 
+            // Title
+            // 
+            this.Title.HeaderText = "Şikayet Konusu";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            this.Title.Width = 97;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Açıklamalar";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 86;
+            // 
+            // Detail
+            // 
+            this.Detail.HeaderText = "Detaylar";
+            this.Detail.Name = "Detail";
+            this.Detail.ReadOnly = true;
+            this.Detail.Width = 71;
+            // 
+            // FirmName
+            // 
+            this.FirmName.HeaderText = "Firma Adı";
+            this.FirmName.Name = "FirmName";
+            this.FirmName.ReadOnly = true;
+            this.FirmName.Width = 69;
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Firma Adresi";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 82;
+            // 
+            // UserName
+            // 
+            this.UserName.HeaderText = "Şikayetçinin Adı";
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            this.UserName.Width = 98;
+            // 
+            // SurName
+            // 
+            this.SurName.HeaderText = "Şikayetçinin Soyadı";
+            this.SurName.Name = "SurName";
+            this.SurName.ReadOnly = true;
+            this.SurName.Width = 114;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Telefon";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 68;
+            // 
             // btnSikayetYaz
             // 
             this.btnSikayetYaz.BackColor = System.Drawing.Color.Tan;
@@ -142,7 +199,7 @@
             this.lblFirmaSirala.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lblFirmaSirala.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFirmaSirala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblFirmaSirala.Location = new System.Drawing.Point(14, 145);
+            this.lblFirmaSirala.Location = new System.Drawing.Point(14, 126);
             this.lblFirmaSirala.Name = "lblFirmaSirala";
             this.lblFirmaSirala.Size = new System.Drawing.Size(248, 26);
             this.lblFirmaSirala.TabIndex = 5;
@@ -154,7 +211,7 @@
             this.lblTicketSirala.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lblTicketSirala.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTicketSirala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTicketSirala.Location = new System.Drawing.Point(14, 205);
+            this.lblTicketSirala.Location = new System.Drawing.Point(14, 163);
             this.lblTicketSirala.Name = "lblTicketSirala";
             this.lblTicketSirala.Size = new System.Drawing.Size(248, 26);
             this.lblTicketSirala.TabIndex = 6;
@@ -254,7 +311,7 @@
             this.pnlBottom.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.pnlBottom.ColumnCount = 2;
             this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39759F));
-            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 143F));
+            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
             this.pnlBottom.Controls.Add(this.lblUser, 0, 0);
             this.pnlBottom.Controls.Add(this.lblFirmName, 1, 0);
             this.pnlBottom.Location = new System.Drawing.Point(3, 206);
@@ -266,18 +323,6 @@
             this.pnlBottom.Size = new System.Drawing.Size(254, 65);
             this.pnlBottom.TabIndex = 29;
             // 
-            // lblFirmName
-            // 
-            this.lblFirmName.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.lblFirmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblFirmName.ForeColor = System.Drawing.Color.Sienna;
-            this.lblFirmName.Location = new System.Drawing.Point(112, 2);
-            this.lblFirmName.Name = "lblFirmName";
-            this.lblFirmName.Size = new System.Drawing.Size(137, 61);
-            this.lblFirmName.TabIndex = 3;
-            this.lblFirmName.Text = "Firma Adı ve Şehir";
-            this.lblFirmName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblUser
             // 
             this.lblUser.BackColor = System.Drawing.Color.AntiqueWhite;
@@ -285,10 +330,22 @@
             this.lblUser.ForeColor = System.Drawing.Color.DarkGray;
             this.lblUser.Location = new System.Drawing.Point(5, 2);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(99, 61);
+            this.lblUser.Size = new System.Drawing.Size(97, 61);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "KullanıcıAdSoyad";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFirmName
+            // 
+            this.lblFirmName.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblFirmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblFirmName.ForeColor = System.Drawing.Color.Sienna;
+            this.lblFirmName.Location = new System.Drawing.Point(110, 2);
+            this.lblFirmName.Name = "lblFirmName";
+            this.lblFirmName.Size = new System.Drawing.Size(137, 61);
+            this.lblFirmName.TabIndex = 3;
+            this.lblFirmName.Text = "Firma Adı ve Şehir";
+            this.lblFirmName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlTop
             // 
@@ -331,61 +388,19 @@
             this.lblDescription.Text = "Description";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Title
+            // cmbFirma
             // 
-            this.Title.HeaderText = "Şikayet Konusu";
-            this.Title.Name = "Title";
-            this.Title.ReadOnly = true;
-            this.Title.Width = 97;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Açıklamalar";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 86;
-            // 
-            // Detail
-            // 
-            this.Detail.HeaderText = "Detaylar";
-            this.Detail.Name = "Detail";
-            this.Detail.ReadOnly = true;
-            this.Detail.Width = 71;
-            // 
-            // FirmName
-            // 
-            this.FirmName.HeaderText = "Firma Adı";
-            this.FirmName.Name = "FirmName";
-            this.FirmName.ReadOnly = true;
-            this.FirmName.Width = 69;
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Firma Adresi";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 82;
-            // 
-            // UserName
-            // 
-            this.UserName.HeaderText = "Şikayetçinin Adı";
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
-            this.UserName.Width = 98;
-            // 
-            // SurName
-            // 
-            this.SurName.HeaderText = "Şikayetçinin Soyadı";
-            this.SurName.Name = "SurName";
-            this.SurName.ReadOnly = true;
-            this.SurName.Width = 114;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Telefon";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 68;
+            this.cmbFirma.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbFirma.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbFirma.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.cmbFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbFirma.FormattingEnabled = true;
+            this.cmbFirma.IntegralHeight = false;
+            this.cmbFirma.Location = new System.Drawing.Point(12, 206);
+            this.cmbFirma.Name = "cmbFirma";
+            this.cmbFirma.Size = new System.Drawing.Size(250, 28);
+            this.cmbFirma.TabIndex = 8;
+            this.cmbFirma.SelectedIndexChanged += new System.EventHandler(this.cmbFirma_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -393,6 +408,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1001, 532);
+            this.Controls.Add(this.cmbFirma);
             this.Controls.Add(this.pnlBig);
             this.Controls.Add(this.lblTicketSirala);
             this.Controls.Add(this.lblFirmaSirala);
@@ -445,6 +461,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SurName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.ComboBox cmbFirma;
     }
 }
 

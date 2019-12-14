@@ -22,29 +22,13 @@ namespace TicketApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //User user = UserRepository.GetUserById(1);
-
-            //MessageBox.Show($"{user.Name}");
-
-            //List<User> users = UserRepository.GetUsers();
-
-            //foreach (var item in users)
-            //{
-            //    MessageBox.Show($"{item.Name}");
-            //}
-
-
-            //User user = new User
-            //{
-            //    Name = "Doğan",
-            //    Surname = "Öztürk",
-            //    Phone = "00000000",
-            //    IsActive = true
-            //};
-
-            //var data = UserRepository.InsertUser(user);
-
-            //MessageBox.Show(data.ToString());
+            List < string > firm_names = FirmRepository.GetFirmNames();
+            for (int i = 0; i < firm_names.Count; i++)
+            {
+                cmbFirma.Items.Add(firm_names[i]);
+            }
+            
+            
                                                   
         }
 
@@ -145,9 +129,25 @@ namespace TicketApp
 
         }
 
+        
         private void dtgListele_MouseHover(object sender, EventArgs e)
         {
            
+        }
+
+        private void cmbFirma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dtgListele.Rows.Clear();
+            string firm_name = cmbFirma.SelectedItem.ToString();
+            List<Complaint> complaints = ComplaintRepository.GetComplaintsByFirmName(firm_name);
+
+            foreach (var item in complaints)
+            {
+                dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.UserName}", $"{item.UserSurName}", $"{item.Address}", $"{item.UserPhone}");
+
+            }
+            ;
+
         }
     }
 }
