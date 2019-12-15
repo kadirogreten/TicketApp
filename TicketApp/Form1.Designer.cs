@@ -57,6 +57,7 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.cmbFirma = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSikayetSil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListele)).BeginInit();
             this.pnlBig.SuspendLayout();
             this.pnlLCenter.SuspendLayout();
@@ -413,12 +414,23 @@
             this.label1.Text = "Firmanın aldığı şikayetler";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnSikayetSil
+            // 
+            this.btnSikayetSil.Location = new System.Drawing.Point(26, 405);
+            this.btnSikayetSil.Name = "btnSikayetSil";
+            this.btnSikayetSil.Size = new System.Drawing.Size(184, 40);
+            this.btnSikayetSil.TabIndex = 10;
+            this.btnSikayetSil.Text = "Şikayeti Silmek İçin Tıklayınız";
+            this.btnSikayetSil.UseVisualStyleBackColor = true;
+            this.btnSikayetSil.Click += new System.EventHandler(this.btnSikayetSil_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1001, 532);
+            this.Controls.Add(this.btnSikayetSil);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbFirma);
             this.Controls.Add(this.pnlBig);
@@ -475,6 +487,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.ComboBox cmbFirma;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSikayetSil;
     }
 }
 

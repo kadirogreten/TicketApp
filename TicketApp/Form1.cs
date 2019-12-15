@@ -147,6 +147,16 @@ namespace TicketApp
 
         }
 
-        
+        private void btnSikayetSil_Click(object sender, EventArgs e)
+        {
+           
+            foreach (DataGridViewRow drow in dtgListele.SelectedRows)  //Seçili Satırları Silme
+            {
+                int selected = dtgListele.SelectedCells[0].RowIndex;
+                string title = dtgListele.Rows[selected].Cells[0].Value.ToString();
+                TicketRepository.DeleteTicketByTitle(title);
+                          
+            }
+        }
     }
 }

@@ -99,11 +99,12 @@ namespace ServiceLayer
         }              
 
         
-        public static int DeleteTicketById(int id)
+        public static int DeleteTicketByTitle(string title)
         {
-            string commandText = $"Delete FROM [dbo].[Ticket] where [Id]={id}";
+            string commandText = $"Delete FROM [dbo].[Ticket] where [Title]='{title}' ";
             int data = 0;
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand(commandText);
+         
 
             try
             {
