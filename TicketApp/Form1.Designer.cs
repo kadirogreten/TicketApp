@@ -57,6 +57,7 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.cmbFirma = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSikayetSil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListele)).BeginInit();
             this.pnlBig.SuspendLayout();
             this.pnlLCenter.SuspendLayout();
@@ -312,7 +313,7 @@
             this.pnlBottom.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.pnlBottom.ColumnCount = 2;
             this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39759F));
-            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
+            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
             this.pnlBottom.Controls.Add(this.lblUser, 0, 0);
             this.pnlBottom.Controls.Add(this.lblFirmName, 1, 0);
             this.pnlBottom.Location = new System.Drawing.Point(3, 206);
@@ -331,7 +332,7 @@
             this.lblUser.ForeColor = System.Drawing.Color.DarkGray;
             this.lblUser.Location = new System.Drawing.Point(5, 2);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(97, 61);
+            this.lblUser.Size = new System.Drawing.Size(95, 61);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "KullanıcıAdSoyad";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -341,7 +342,7 @@
             this.lblFirmName.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lblFirmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblFirmName.ForeColor = System.Drawing.Color.Sienna;
-            this.lblFirmName.Location = new System.Drawing.Point(110, 2);
+            this.lblFirmName.Location = new System.Drawing.Point(108, 2);
             this.lblFirmName.Name = "lblFirmName";
             this.lblFirmName.Size = new System.Drawing.Size(137, 61);
             this.lblFirmName.TabIndex = 3;
@@ -414,12 +415,23 @@
             this.label1.Text = "Firmanın aldığı şikayetler";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnSikayetSil
+            // 
+            this.btnSikayetSil.Location = new System.Drawing.Point(26, 405);
+            this.btnSikayetSil.Name = "btnSikayetSil";
+            this.btnSikayetSil.Size = new System.Drawing.Size(184, 40);
+            this.btnSikayetSil.TabIndex = 10;
+            this.btnSikayetSil.Text = "Şikayeti Silmek İçin Tıklayınız";
+            this.btnSikayetSil.UseVisualStyleBackColor = true;
+            this.btnSikayetSil.Click += new System.EventHandler(this.btnSikayetSil_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1001, 532);
+            this.Controls.Add(this.btnSikayetSil);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbFirma);
             this.Controls.Add(this.pnlBig);
@@ -476,6 +488,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.ComboBox cmbFirma;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSikayetSil;
     }
 }
 
