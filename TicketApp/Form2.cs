@@ -97,36 +97,40 @@ namespace TicketApp
 
         private void frmSikayet_Load(object sender, EventArgs e)
         {
+            txtUser.MaxLength = 50;
+            txtSurname.MaxLength = 50;
+            txtPhone.MaxLength = 50;
+            txtFirm.MaxLength = 50;
+            txtAddress.MaxLength = 250;
+            txtTitle.MaxLength = 50;
+            txtDescription.MaxLength = 150;
+        }
 
+       
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            //var chars = txtPhone.Text.ToCharArray();
+
+            //for (int i = 0; i < chars.Length; i++)
+            //{
+            //    if (Char.IsLetter(chars[i]) || !Char.IsDigit(chars[i]) || Char.IsWhiteSpace(chars[i]))
+            //    {
+            //        MessageBox.Show("Harf Giremezsiniz!");
+            //        txtPhone.Text = string.Empty;
+            //    }
+            //}
 
         }
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //phone texbox ına sadece rakam girilmesi için yaptık.
-            if (Char.IsNumber((char)e.KeyChar) || e.KeyChar == (char)8)
-            {
-                e.Handled = false;
-            }
-            else
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+                MessageBox.Show("Harf giremezsiniz");
             }
-        }
-
-        private void txtPhone_TextChanged(object sender, EventArgs e)
-        {
-            var chars = txtPhone.Text.ToCharArray();
-
-            for (int i = 0; i < chars.Length; i++)
-            {
-                if (Char.IsLetter(chars[i]) || !Char.IsDigit(chars[i]) || Char.IsWhiteSpace(chars[i]))
-                {
-                    MessageBox.Show("Harf Giremezsiniz!");
-                    txtPhone.Text = string.Empty;
-                }
-            }
-
+           
         }
     }
 }
