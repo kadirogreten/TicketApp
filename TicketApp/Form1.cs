@@ -22,29 +22,36 @@ namespace TicketApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List < string > firm_names = FirmRepository.GetFirmNames();
+
+            GetComboFirma();
+        }
+
+        public void GetComboFirma()
+        {
+            List<string> firm_names = FirmRepository.GetFirmNames();
             for (int i = 0; i < firm_names.Count; i++)
             {
                 cmbFirma.Items.Add(firm_names[i]);
             }
-            
-            
-                                                  
         }
 
-        private void lblSikayetListele_Click(object sender, EventArgs e)
+        public void SikayetListele()
         {
             List<Complaint> complaints = new List<Complaint>();
-            
+
             dtgListele.Rows.Clear();
             complaints = ComplaintRepository.GetComplaints();
 
             foreach (var item in complaints)
             {
                 dtgListele.Rows.Add($"{item.Title}", $"{item.Description}", $"{item.Detail}", $"{item.FirmName}", $"{item.Address}", $"{item.UserName}", $"{item.UserSurName}", $"{item.UserPhone}");
-               
-            }
 
+            }
+        }
+        private void lblSikayetListele_Click(object sender, EventArgs e)
+        {
+
+            SikayetListele();
                                              
         }
 
@@ -154,9 +161,23 @@ namespace TicketApp
             {
                 int selected = dtgListele.SelectedCells[0].RowIndex;
                 string title = dtgListele.Rows[selected].Cells[0].Value.ToString();
-                TicketRepository.DeleteTicketByTitle(title);
-                          
-            }
+                ComplaintRepository.DeleteComplaintByTitle(title);
+                
+                    cmbFirma.Items.Clear();
+                    cmbFirma.Text = string.Empty;
+                    dtgListele.Rows.Clear();
+                    SikayetListele();
+                    GetComboFirma();
+                
+                
+            }  
+            
+            
+
         }
+
+       
+
+      
     }
 }

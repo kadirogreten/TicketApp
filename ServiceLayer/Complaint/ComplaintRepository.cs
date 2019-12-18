@@ -231,6 +231,18 @@ namespace ServiceLayer
             return complaints;
         }
 
+        public static int DeleteComplaintByTitle(string title)
+        {
+            int data = 0;
+            int user_id= UserRepository.GetUserDeleteId(title);
+            int firm_id= FirmRepository.GetFirmDeleteId(title);
+            TicketRepository.DeleteTicketByTitle(title);
+            UserRepository.DeleteUserById(user_id);
+            FirmRepository.DeleteFirmById(firm_id);
+
+            return data;
+
+        }
 
     }
 }

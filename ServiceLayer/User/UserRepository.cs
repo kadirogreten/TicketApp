@@ -128,12 +128,12 @@ namespace ServiceLayer
         }
 
 
-
         public static int DeleteUserById(int id)
         {
-            string commandText = $"Delete FROM [dbo].[User] where [Id]={id}";
+            string commandText = $"Delete FROM [dbo].[User] where [id]={id} ";
             int data = 0;
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand(commandText);
+
 
             try
             {
@@ -153,6 +153,30 @@ namespace ServiceLayer
             }
 
             return data;
+
+        }
+
+        public static int GetUserDeleteId(string title)
+        {
+
+
+            int user_delete_id = 0;
+            string commandText = $"SELECT [UserId] FROM [dbo].[Ticket] where [Title]='{title}'";
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+            SqlDataReader reader = cmd.ExecuteReader();
+            User user = new User();
+            while (reader.Read())
+            {
+                user = new User
+                {
+                    Id = reader.GetInt32(0)
+                };
+                user_delete_id = user.Id;
+
+            }
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
+            return user_delete_id;
 
         }
     }

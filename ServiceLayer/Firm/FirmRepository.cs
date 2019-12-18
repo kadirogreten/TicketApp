@@ -138,12 +138,12 @@ namespace ServiceLayer
 
         }
 
-
         public static int DeleteFirmById(int id)
         {
-            string commandText = $"Delete FROM [dbo].[Firm] where [Id]={id}";
+            string commandText = $"Delete FROM [dbo].[Firm] where [id]={id} ";
             int data = 0;
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand(commandText);
+
 
             try
             {
@@ -165,6 +165,31 @@ namespace ServiceLayer
             return data;
 
         }
+
+        public static int GetFirmDeleteId(string title)
+        {
+
+           
+            int firm_delete_id = 0;
+            string commandText = $"SELECT [FirmaId] FROM [dbo].[Ticket] where [Title]='{title}'";
+            var cmd = SqlConnectionExtension.ConnectToDb(commandText);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Firm firm = new Firm();
+            while (reader.Read())
+            {
+                firm = new Firm
+                {
+                    Id = reader.GetInt32(0)
+                };
+                firm_delete_id = firm.Id;
+
+            }
+            cmd.Connection.Close();
+            cmd.Connection.Dispose();
+            return firm_delete_id;
+
+        }
+
 
     }
 

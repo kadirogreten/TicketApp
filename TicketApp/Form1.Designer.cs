@@ -312,7 +312,7 @@
             this.pnlBottom.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.pnlBottom.ColumnCount = 2;
             this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.39759F));
-            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
+            this.pnlBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
             this.pnlBottom.Controls.Add(this.lblUser, 0, 0);
             this.pnlBottom.Controls.Add(this.lblFirmName, 1, 0);
             this.pnlBottom.Location = new System.Drawing.Point(3, 206);
@@ -331,7 +331,7 @@
             this.lblUser.ForeColor = System.Drawing.Color.DarkGray;
             this.lblUser.Location = new System.Drawing.Point(5, 2);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(95, 61);
+            this.lblUser.Size = new System.Drawing.Size(93, 61);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "KullanıcıAdSoyad";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -341,7 +341,7 @@
             this.lblFirmName.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lblFirmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblFirmName.ForeColor = System.Drawing.Color.Sienna;
-            this.lblFirmName.Location = new System.Drawing.Point(108, 2);
+            this.lblFirmName.Location = new System.Drawing.Point(106, 2);
             this.lblFirmName.Name = "lblFirmName";
             this.lblFirmName.Size = new System.Drawing.Size(137, 61);
             this.lblFirmName.TabIndex = 3;
@@ -391,6 +391,7 @@
             // 
             // cmbFirma
             // 
+            this.cmbFirma.AllowDrop = true;
             this.cmbFirma.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbFirma.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbFirma.BackColor = System.Drawing.Color.AntiqueWhite;
@@ -398,8 +399,10 @@
             this.cmbFirma.FormattingEnabled = true;
             this.cmbFirma.IntegralHeight = false;
             this.cmbFirma.Location = new System.Drawing.Point(12, 271);
+            this.cmbFirma.MaximumSize = new System.Drawing.Size(250, 0);
             this.cmbFirma.Name = "cmbFirma";
             this.cmbFirma.Size = new System.Drawing.Size(250, 28);
+            this.cmbFirma.Sorted = true;
             this.cmbFirma.TabIndex = 8;
             this.cmbFirma.SelectedIndexChanged += new System.EventHandler(this.cmbFirma_SelectedIndexChanged);
             // 
